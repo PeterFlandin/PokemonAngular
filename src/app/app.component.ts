@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   }
 
   selectPokemon(pokemonId: String) {
+    const id = +pokemonId;
     const pokemon: Pokemon | undefined = this.pokemonList.find(
       (pokemon) => pokemon.id === +pokemonId
     );

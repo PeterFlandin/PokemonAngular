@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col m4 s6" *ngFor="let item of pokemonList">
       pokémons : {{ item.name }}
-      <div class="card horizontal">
+      <div class="card horizontal" appBorderCard>
         <div class="card-image">
           <img [src]="item.picture" />
         </div>
@@ -14,7 +14,7 @@
         <div class="card-content">
           <p>{{ item.name }}</p>
           <p>
-            <small>{{ item.created }}</small>
+            <small>{{ item.created | date: 'dd/MM/yyyy' }}</small>
           </p>
         </div>
       </div>
