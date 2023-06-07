@@ -1,31 +1,8 @@
-<h1 class="center">List de pokèmons</h1>
-<!-- <input #input (keyup.enter)="selectPokemon(input.value)" type="number" /> -->
-
-<div class="container">
-  <div class="row">
-    <div class="col m4 s6" *ngFor="let item of pokemonList">
-      pokémons : {{ item.name }}
-      <div class="card horizontal" appBorderCard>
-        <div class="card-image">
-          <img [src]="item.picture" />
-        </div>
-
-        <div class="card-stacked"></div>
-        <div class="card-content">
-          <p>{{ item.name }}</p>
-          <p>
-            <small>{{ item.created | date: 'dd/MM/yyyy' }}</small>
-          </p>
-        </div>
-      </div>
-    </div>
+<nav>
+  <div class="nav-wrapper teal">
+    <a class="brand-logo center" href="#" class="breadcrumb">Accueil Du Pokédéx
+    </a>
   </div>
-</div>
+</nav>
 
-<!-- <p *ngIf="pokemonSelected">
-  Vous avez selectionné : {{ pokemonSelected?.name }}
-</p>
-
-<p *ngIf="!pokemonSelected" [ngStyle]="{ color: 'red' }">
-  Vous n'avez pas selectionné
-</p> -->
+<router-outlet></router-outlet>
