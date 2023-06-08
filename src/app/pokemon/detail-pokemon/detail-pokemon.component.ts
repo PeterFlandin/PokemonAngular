@@ -6,28 +6,24 @@ import { Pokemon } from "../pokemon";
 @Component({
   selector: "app-detail-pokemon",
   templateUrl: "./detail-pokemon.component.html",
- 
 })
 export class DetailPokemonComponent implements OnInit {
   pokemonList: Pokemon[];
   pokemon: Pokemon | undefined;
 
-  constructor(private route: ActivatedRoute , private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.pokemonList = POKEMONS;
-    const pokemonId: string | null = this.route.snapshot.paramMap.get('id');
+    const pokemonId: string | null = this.route.snapshot.paramMap.get("id");
     if (pokemonId) {
-     this.pokemon = this.pokemonList.find(
+      this.pokemon = this.pokemonList.find(
         (pokemon) => pokemon.id == +pokemonId
       );
-
     }
   }
 
-
   goBack(): void {
-    this.router.navigate(['/pokemon']);
+    this.router.navigate(["/pokemon"]);
   }
-
 }
