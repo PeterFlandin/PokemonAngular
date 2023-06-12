@@ -2,21 +2,21 @@
 
 <div class="container">
   <div class="row">
-    <div class="col m4 s6" *ngFor="let item of pokemonList">
-      pokémons : {{ item.name }}
-      <div (click)="goToPokemon(item)" class="card horizontal" appBorderCard>
+    <div class="col m4 s6" *ngFor="let pokemon of pokemonList">
+      pokémons : {{ pokemon.name }}
+      <div (click)="goToPokemon(pokemon)" class="card horizontal" appBorderCard>
         <div class="card-image">
-          <img [src]="item.picture" />
+          <img [src]="pokemon.picture" />
         </div>
 
         <div class="card-stacked"></div>
         <div class="card-content">
-          <p>{{ item.name }}</p>
+          <p>{{ pokemon.name }}</p>
           <p>
-            <small>{{ item.created | date : "dd/MM/yyyy" }}</small>
+            <small>{{ pokemon.created | date : "dd/MM/yyyy" }}</small>
 
             <span
-              *ngFor="let type of item.types"
+              *ngFor="let type of pokemon.types"
               class="{{ type | pokemonPieColor }}"
             >
               {{ type }}
