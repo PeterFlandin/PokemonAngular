@@ -9,7 +9,7 @@ import { PokemonService } from "../pokemon.service";
 })
 export class DetailPokemonComponent implements OnInit {
   pokemon: Pokemon | undefined;
-
+  pokemonList: Pokemon[];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -19,7 +19,9 @@ export class DetailPokemonComponent implements OnInit {
   ngOnInit(): void {
     const pokemonId: string | null = this.route.snapshot.paramMap.get("id");
     if (pokemonId) {
-      this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
+      this.pokemonService
+        .getPokemonById(+pokemonId)
+        .subscribe((pokemon) => this.pokemon == pokemon);
     }
   }
 
@@ -29,5 +31,11 @@ export class DetailPokemonComponent implements OnInit {
 
   goToEditPokemon(pokemon: Pokemon): void {
     this.router.navigate(["/edit/pokemon", pokemon.id]);
+  }
+
+  deletePokemons(pokemon: Pokemon): void {
+    this.pokemonService
+      .getPokemonById(pokemon.id)
+      .subscribe(() => this.goBack());
   }
 }
