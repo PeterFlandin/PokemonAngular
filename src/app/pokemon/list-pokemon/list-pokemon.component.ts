@@ -10,18 +10,13 @@ import { PokemonService } from "../pokemon.service";
 export class ListPokemonComponent {
   pokemonList: Pokemon[];
 
-  constructor(private router: Router, private pokemonService : PokemonService ) {
-  }
+  constructor(private router: Router, private pokemonService: PokemonService) {}
 
   ngOnInit() {
-   this.pokemonList = this.pokemonService.getPokemonList()
+    this.pokemonList = this.pokemonService.getPokemonList();
   }
-
-
 
   goToPokemon(pokemon: Pokemon) {
-  this.router.navigate(["/pokemon", pokemon.id]);
-  
+    this.router.navigate(["/pokemon", pokemon.id]);
   }
-
 }
