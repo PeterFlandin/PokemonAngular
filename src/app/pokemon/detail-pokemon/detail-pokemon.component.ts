@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Observable } from "rxjs";
 import { Pokemon } from "../pokemon";
 import { PokemonService } from "../pokemon.service";
 
@@ -38,4 +39,10 @@ export class DetailPokemonComponent implements OnInit {
       .getPokemonById(pokemon.id)
       .subscribe(() => this.goBack());
   }
+
+
+
 }
+
+
+ 

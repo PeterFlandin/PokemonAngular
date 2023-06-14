@@ -11,7 +11,6 @@ export class ListPokemonComponent {
   pokemonList: Pokemon[];
   pokemon: Pokemon | undefined;
 
-
   constructor(private router: Router, private pokemonService: PokemonService) {}
 
   ngOnInit() {
