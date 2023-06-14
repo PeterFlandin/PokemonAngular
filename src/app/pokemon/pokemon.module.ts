@@ -9,9 +9,11 @@ import { BorderCardDirective } from "./border-card.directive";
 import { RouterModule, Routes } from "@angular/router";
 import { PokemonService } from "./pokemon.service";
 import { EditPokemonComponent } from "./edit-pokemon/edit-pokemon.component";
+import { AddPokemonComponent } from "./add-pokemon/add-pokemon.component";
 
 const routes: Routes = [
   { path: "edit/pokemon/:id", component: EditPokemonComponent },
+  { path: "pokemon/add", component: AddPokemonComponent },
   { path: "pokemon/:id", component: DetailPokemonComponent },
   { path: "pokemon", component: ListPokemonComponent },
 ];
@@ -24,6 +26,7 @@ const routes: Routes = [
     PokemonPieColorPipe,
     BorderCardDirective,
     EditPokemonComponent,
+    AddPokemonComponent,
   ],
   imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
   providers: [PokemonService],
